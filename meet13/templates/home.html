@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1>Welcome to ASUS</h1>
+<section class="branding-section">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Discover the Future of Innovation</h2>
+            <p>Our product is designed to make your life easier and more productive. With cutting-edge technology and user-friendly features, ASUS is here to revolutionize your experience.</p>
+            <a href="#" class="btn btn-custom">Learn More</a>
+        </div>
+    </div>
+</section>
+<section class="features-section">
+    <h2>Our Features</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="feature-box">
+                <h3>Innovative Design</h3>
+                <p>Our product is sleek, modern, and built for the future.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                <h3>Ease of Use</h3>
+                <p>User-friendly interface designed for everyone.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box">
+                <h3>High Performance</h3>
+                <p>Experience blazing speed and stability with every use.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-section">
+    <h2>Ready to take the next step?</h2>
+    <p>Get started today and experience the future of technology.</p>
+    <a href="#" class="btn btn-custom">Get Started</a>
+</section>
+{% if logged_in %}
+<div class="alert alert-success" role="alert">
+    Welcome back, {{ username }}! You are logged in.
+</div>
+{% else %}
+<div class="alert alert-info" role="alert">
+    Please <a href="{{ url_for('login') }}">login</a> to access more features.
+</div>
+{% endif %}
+{% endblock %}

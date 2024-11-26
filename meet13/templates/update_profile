@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}Update Profile - Project X{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center bg-transparent border-light shadow-lg">
+                <div class="card-header">
+                    <h2 class="text-light">Update Your Profile</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{{ url_for('update_profile') }}">
+                        <div class="mb-3">
+                            <label for="username" class="form-label text-light">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" value="{{ username }}" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom-light mb-3">Save Changes</button>
+                    </form>
+                    <a href="{{ url_for('profile') }}" class="btn btn-secondary">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

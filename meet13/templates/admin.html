@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container text-center mt-5">
+    <h1>Admin Panel</h1>
+    <p>Welcome to the admin panel. Only authorized users can see this page.</p>
+    <a href="{{ url_for('home') }}" class="btn btn-custom">Back to Home</a>
+    <a href="{{ url_for('logout') }}" class="btn btn-custom">Logout</a>
+</div>
+{% endblock %}

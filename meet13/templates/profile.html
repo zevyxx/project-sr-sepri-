@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile - Project X{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card text-center bg-transparent border-light shadow-lg">
+                <div class="card-header">
+                    <h2 class="text-light">Welcome, {{ username }}!</h2>
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title mb-3 text-light">Your Profile Information</h4>
+                    <p class="card-text text-light">
+                        <strong>Username:</strong> {{ username }}<br>
+                    </p>
+                    <div class="d-flex flex-column">
+                        <a href="{{ url_for('edit_profile') }}" class="btn btn-custom-light mb-3">Edit Profile</a>
+                        <a href="{{ url_for('logout') }}" class="btn btn-danger mb-3">Logout</a>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <small class="text-light">Last updated: Today</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="branding-section">
+                <h3 class="text-light">Explore Our Latest Products</h3>
+                <p class="text-light">Discover the most innovative products we've launched this year. Check out our new items that are designed to enhance your experience with us.</p>
+                <a href="{{ url_for('product_page') }}" class="btn btn-custom-light">Explore Products</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
